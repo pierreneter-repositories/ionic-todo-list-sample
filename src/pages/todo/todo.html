@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Need to-do</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      To-do list: {{category.name}}
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+          <ion-input [(ngModel)]="title" type="text" placeholder="To-do"></ion-input>
+          <button item-end ion-button (click)="add()">Add</button>
+      </ion-item>
+      <button ion-item *ngFor="let todo of todos">
+        <ion-label>{{todo.title}}</ion-label>
+        <ion-checkbox [(ngModel)]="todo.checked" (ionChange)="change(todo.id)"></ion-checkbox>
+        <button ion-button color="danger" item-end clear icon-only (click)="delete(todo.id)">
+          <ion-icon name='close' is-active="false"></ion-icon>
+        </button>
+      </button>
+    </ion-list>
+  </ion-card>
+</ion-content>

@@ -1,15 +1,20 @@
 {
-  "name": "todo",
+  "name": "todo-list-app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Piere Neter",
+  "homepage": "http://pierreneter.com/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "test": "karma start ./test-config/karma.conf.js",
+    "test-ci": "karma start ./test-config/karma.conf.js --single-run",
+    "e2e": "npm run e2e-update && npm run e2e-test",
+    "e2e-test": "protractor ./test-config/protractor.conf.js",
+    "e2e-update": "webdriver-manager update --standalone false --gecko false"
   },
   "dependencies": {
     "@angular/common": "4.1.3",
@@ -28,6 +33,7 @@
     "ionicons": "3.0.0",
     "rxjs": "5.4.0",
     "sw-toolbox": "3.6.0",
+    "uuid": "^3.1.0",
     "zone.js": "0.8.12"
   },
   "devDependencies": {

@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar no-border-bottom>
+      <button ion-button menuToggle (click)="goBack()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Add List</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Add new to-do list
+    </ion-card-header>
+    <ion-list>
+    <ion-item>
+        <ion-label color="primary">Name</ion-label>
+        <ion-input [(ngModel)]="name" placeholder="Name of list"></ion-input>
+      </ion-item>
+      <ion-item>
+      <button ion-button full color="primary" (click)="add()"><ion-icon name="add"></ion-icon>&nbsp;Add</button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

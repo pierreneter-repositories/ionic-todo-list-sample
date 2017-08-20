@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>To-do List</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Lists
+    </ion-card-header>
+    <ion-list>
+      <button ion-item *ngFor="let category of categories" (click)="openList(category)">
+        <ion-badge color="secondary">{{category.count}}</ion-badge>
+        &nbsp;&nbsp;
+        {{category.name}}
+        <button ion-button color="danger" item-end clear icon-only (click)="deleteList(category.id); $event.stopPropagation()">
+          <ion-icon name='trash' is-active="false"></ion-icon>
+        </button>
+      </button>
+      <button ion-item full color="primary" margin-top (click)="addList()"><ion-icon name="add"></ion-icon>&nbsp;Add new list</button>
+    </ion-list>
+  </ion-card>
+</ion-content>

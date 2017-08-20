@@ -53,7 +53,7 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+$toolbar-md-background: color($colors, primary);
 
 
 // App Windows Variables
@@ -86,3 +86,7 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+$font-family-md-base: 'Saira Semi Condensed';
+$font-family-wp-base: 'Saira Semi Condensed';
+$font-family-ios-base: 'Saira Semi Condensed';
